@@ -9,5 +9,6 @@ When (/^I add "(.*)" to the search box$/) do |item|
   @driver.find_element(:name, 'q').send_keys(item)
 end
 Then("I close the browser") do
+  puts 'The Google is launched'
   @driver.quit
 end
