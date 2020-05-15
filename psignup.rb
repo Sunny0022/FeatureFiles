@@ -12,8 +12,8 @@ And(/^i click sign up link$/) do
 end
 
 When(/^i fill the form$/) do
-  @driver.find_element(:id, 'user_name').send_keys('automate12')
-  @driver.find_element(:id, 'user_email').send_keys('automate12@domain.com')
+  @driver.find_element(:id, 'user_name').send_keys('automate125')
+  @driver.find_element(:id, 'user_email').send_keys('automate125@domain.com')
   @driver.find_element(:id, 'user_password').send_keys('Password123,.')
   @driver.find_element(:id, 'user_password_confirmation').send_keys('Password123,.')
   @driver.find_element(:xpath, '/html/body/div/div/div/div/div[2]/form/div/div[2]/input').click
