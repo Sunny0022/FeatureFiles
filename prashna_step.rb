@@ -13,11 +13,7 @@ When(/^I click Signup form$/) do
 end
 
 And(/^I enter (.*) in name field$/) do |name|
-  if name == ''
-    print 'Name Error'
-  else
-    @driver.find_element(:id, 'user_name').send_keys(name)
-  end
+  @driver.find_element(:id, 'user_name').send_keys(name)
 end
 
 And(/^I enter (.*) in email field$/) do |mail|
