@@ -8,7 +8,7 @@ Given(/^I visit the Site$/) do
 end
 
 When(/^I click Signup form$/) do
-  @driver.find_element(:xpath, '/html/body/nav/div[2]/ul/li[3]/a').click
+  @driver.find_element(:xpath, '/html/body/div/nav/div[3]/ul/li[3]/a').click
   sleep 5
 end
 
@@ -24,18 +24,19 @@ And(/^I enter (.*) in password field$/) do |pass|
   @driver.find_element(:id, 'user_password').send_keys(pass)
 end
 
-And(/^I enter (.*) in confirm\-password field$/) do |confirm_pass|
+And(/^I enter (.*) in confirm-password field$/) do |confirm_pass|
   @driver.find_element(:id, 'user_password_confirmation').send_keys(confirm_pass)
-  @driver.find_element(:xpath, '/html/body/div/div/div[1]/div/div/div[2]/form/div/div[2]/input').click
+  @driver.find_element(:xpath, '/html/body/div/div/div/div[1]/div/div/div[2]/form/div/div[2]/input').click
 end
 
 Then(/^user should be created with verification$/) do
-  assert(@driver.find_element(:css, 'div.container:nth-child(1)').text.include?('Check you email for confirmation mail'), 'Assertion failed')
+  assert(@driver.find_element(:css, 'div.container:nth-child(1)').text.include?('Check you email for confirmation mail'),'Assertion failed')
   puts 'Successfully completed the user registration and validates the Success'
   @driver.quit
 end
 
 Then(/^user should not be created$/) do
-  puts 'user cant be created due to some errors' if @driver.find_element(:xpath, '/html/body/div/div/div[1]/div[1]/button').displayed?
+  assert(@driver.find_element(:xpath, '/html/body/div/div/div/div[1]/div[1]').displayed?)
+  puts 'user cant be created due to some errors'
   @driver.quit
 end
