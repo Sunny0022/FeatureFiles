@@ -31,7 +31,7 @@ end
 
 Then(/^user should be created with verification$/) do
   assert(@driver.find_element(:css, 'div.container:nth-child(1)').text.include?('Check you email for confirmation mail'),'Assertion failed')
-  puts 'Successfully completed the user registration and validates the Success'
+  puts 'Login Success'
   @driver.quit
 end
 
